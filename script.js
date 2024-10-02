@@ -14,43 +14,6 @@ async function fetchNews(query) {
 
 }
 
-
-// async function fetchNews(query) {
-//     try {
-//         const res = await fetch(`${url}${query}&apiKey=${API_KEY}`, {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json",
-//                 "mode": "cors",
-//                 "credentials": "include"
-//             }
-//         });
-
-//         if (res.status === 426) {
-//             console.error("Error 426: Upgrade required. Please check API version or protocol.");
-//             return;
-//         }
-
-//         if (!res.ok) {
-//             throw new Error(`HTTP error! status: ${res.status}`);
-//         }
-
-//         const data = await res.json();
-
-//         if (!data.articles || data.articles.length === 0) {
-//             console.error("No articles found for the query:", query);
-//             return;
-//         }
-
-//         bindData(data.articles);
-//     } catch (error) {
-//         console.error("Error fetching news:", error.message);
-//     }
-// }
-
-
-
 function bindData(articles) {
     const cardsContainer = document.getElementById("cards-container");
     const newsCardTemplate = document.getElementById("template-news-card");
